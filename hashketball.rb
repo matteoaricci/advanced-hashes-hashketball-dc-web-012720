@@ -226,23 +226,23 @@ def big_shoe_rebounds
 end
 
 def most_points_scored
-    library = game_hash
+  library = game_hash
 
-    hash_new = {}
+  hash_new = {}
 
-    library.each do |location, team_data|
-        team_data.each do |team_info, player_info|
-            if team_info == :players
-                player_info.each do |name|
-                    hash_new[name[:points]] = name[:player_name]
-                end
-            end
-        end
-    end
+  library.each do |location, team_data|
+      team_data.each do |team_info, player_info|
+          if team_info == :players
+              player_info.each do |name|
+                  hash_new[name[:points]] = name[:player_name]
+              end
+          end
+      end
+  end
    
-   max_points_name = hash_new.max[1]
+ max_points_name = hash_new.max[1]
 
-   return max_points_name
+ return max_points_name
 end
 
 def winning_team
