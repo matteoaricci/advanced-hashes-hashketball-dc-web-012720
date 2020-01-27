@@ -1,3 +1,6 @@
+require "pry"
+
+
 def game_hash
   game_hash = {
     :home => {
@@ -125,6 +128,7 @@ def num_points_scored(input_name)
     team_data.each do |team_info, player_info|
       if team_info == :players
         player_info.each do |name|
+          binding.pry
           if name[:player_name] == input_name
             return name[:points]
           end
@@ -311,3 +315,6 @@ def long_name_steals_a_ton?
     return false 
   end
 end
+
+
+num_points_scored("Alan Anderson")
